@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-// const contactsRouter = require("./app/routes/contact.route");
+const bookssRouter = require("./app/routes/book.route");
 // const ApiError = require("./app/api-error");
 const app = express();
 
@@ -10,8 +10,8 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.json({message:"Welcome to QUAN LY THU VIEN application"});
 });
-// app.use("/api/contacts", contactsRouter)
-//  // handle 404 response
+app.use("/api/books", bookssRouter)
+ // handle 404 response
 // app.use((req, res, next) => {
 //     return next(new ApiError(404, "Resource not found"));
 // });
